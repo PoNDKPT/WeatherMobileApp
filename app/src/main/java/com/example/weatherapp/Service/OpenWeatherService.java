@@ -13,8 +13,10 @@ import retrofit2.http.Query;
 public interface OpenWeatherService {
     @GET("weather")
     Call<OpenWeatherModel> getData(@Query("appid") String appid,
-                                         @Query("q") String q,
-                                         @Query("units") String units);
+                                   @Query("q") String q,
+                                   @Query("units") String units,
+                                   @Query("lat") String lat,
+                                   @Query("lon") String lon);
 
     @GET("onecall")
     Call<DailyModel> getDailyData(@Query("lat") String lat,

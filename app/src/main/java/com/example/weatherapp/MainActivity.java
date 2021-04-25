@@ -64,18 +64,20 @@ public class MainActivity extends AppCompatActivity {
 
         searchView = findViewById(R.id.search_view);
 
-        getCurrentData("bangkok");
+        getCurrentData("", "14.6084", "100.9682");
         getHourlyData("13.75", "100.5167");
         getDailyData("13.75", "100.5167");
         SwipeRefreshLayout();
     }
 
-    private void getCurrentData(String cityName){
+    private void getCurrentData(String cityName, String lats, String lons){
         String CITY_NAME = cityName;
         String API_KEY = "3d183a4ae8316fa41f6131ff5189ff7a";
         String UNITS = "metric";
+        String LAT = lats;
+        String LON = lons;
 
-        Call<OpenWeatherModel> call = HttpManager.getInstance().getService().getData(API_KEY, CITY_NAME, UNITS);
+        Call<OpenWeatherModel> call = HttpManager.getInstance().getService().getData(API_KEY, CITY_NAME, UNITS, LAT, LON);
         call.enqueue(new Callback<OpenWeatherModel>() {
             @Override
             public void onResponse(Call<OpenWeatherModel> call, Response<OpenWeatherModel> response) {
@@ -200,7 +202,7 @@ public class MainActivity extends AppCompatActivity {
         SwipeRefreshID.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                getCurrentData(SearchCity);
+                getCurrentData(SearchCity, lat, lon);
                 getDailyData(lat, lon);
                 getHourlyData(lat, lon);
 
@@ -224,7 +226,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onQueryTextSubmit(String s) {
                 SearchCity = searchView.getQuery().toString();
                 Log.d("SearchView", SearchCity);
-                getCurrentData(SearchCity);
+                getCurrentData(SearchCity, lat, lon);
                 getDailyData(lat, lon);
                 getHourlyData(lat, lon);
                 return false;

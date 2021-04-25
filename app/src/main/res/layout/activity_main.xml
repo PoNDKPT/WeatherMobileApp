@@ -6,13 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/SwipeRefresh">
-<!--    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_weight="1"-->
-<!--        android:id="@+id/SwipeRefresh">-->
-
-<!--    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -116,14 +109,16 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="Wind" />
+                            android:text="Wind"
+                            android:textStyle="bold"/>
 
                         <TextView
                             android:id="@+id/Wind"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="TextView"
-                            android:gravity="center" />
+                            android:textSize="12sp"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -147,14 +142,16 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="Humidity" />
+                            android:text="Humidity"
+                            android:textStyle="bold"/>
 
                         <TextView
                             android:id="@+id/Humidity"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="TextView"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:textSize="12sp"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -178,14 +175,16 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="Visibility" />
+                            android:text="Visibility"
+                            android:textStyle="bold"/>
 
                         <TextView
                             android:id="@+id/Visibility"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="TextView"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:textSize="12sp"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -209,14 +208,16 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="Pressure" />
+                            android:text="Pressure"
+                            android:textStyle="bold"/>
 
                         <TextView
                             android:id="@+id/Pressure"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="TextView"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:textSize="12sp"/>
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
